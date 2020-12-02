@@ -1,8 +1,8 @@
 import React, { Component, Fragment
 } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LaunchList from '../components/launches/LaunchList';
-import Request from '../helpers/request.js';
+import LaunchList from '../components/launches/launches/LaunchList';
+import Request from '../../helpers/request.js';
 
 class LaunchContainer extends Component {
     constructor(props) {
