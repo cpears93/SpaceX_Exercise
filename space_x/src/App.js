@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import logo from './launch-home.png';
+import './spacex-logo.png';
 import './App.css';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href = "https://api.spacexdata.com/v3/launches"
           target="_blank"
           rel="noopener noreferrer"
         >
