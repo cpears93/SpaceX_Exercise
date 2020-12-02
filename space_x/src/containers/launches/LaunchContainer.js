@@ -1,6 +1,4 @@
-import React, { Component, Fragment
-} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Component} from 'react';
 import LaunchList from '../components/launches/launches/LaunchList';
 import Request from '../../helpers/request.js';
 
