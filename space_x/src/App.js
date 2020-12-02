@@ -22,6 +22,7 @@ class App extends Component {
               this.setState({
                 isLoaded: true,
                 items: json,
+                
               })
           });
   }
@@ -48,7 +49,7 @@ class App extends Component {
           <p>
         See below for a comprehensive record of Space X launches
       </p>
-
+      <input type="text" defaultValue="Search for a Launch Year"/>
 
       <ul>
           {items.map(item => (
