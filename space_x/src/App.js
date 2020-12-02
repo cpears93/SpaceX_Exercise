@@ -10,8 +10,12 @@ class App extends Component {
       this.state = {
         items: [],
         isLoaded: false,
-      }
+        search: 'Year'
+      };
+  }
 
+  updateSearch(event){
+    this.setState({search: event.target.value})
   }
 
   componentDidMount(){
@@ -49,7 +53,15 @@ class App extends Component {
           <p>
         See below for a comprehensive record of Space X launches
       </p>
-      <input type="text" defaultValue="Search for a Launch Year"/>
+      <ul>
+        {this.launch_year.map((launch_year) => {
+          return <launch year={launch_year}
+              key={launch_year.id}/>
+        })}
+      </ul>
+      <input type="text" 
+          value={this.state.search}
+          onChange={this.updateSearch.bind(this)}/>
 
       <ul>
           {items.map(item => (
