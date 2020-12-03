@@ -7,15 +7,36 @@ class App extends Component {
 
   constructor(props) {
       super(props);
+      this.toggleSortDate = this.toggleSortDate.bind(this)
       this.state = {
         items: [],
         isLoaded: false,
-        search: 'Year'
+        search: 'Year',
+        postList: [],
+        isOldestFirst: true
       };
   }
 
   updateSearch(event){
     this.setState({search: event.target.value})
+  }
+
+  sortByDate(){
+    const {postList} = this.state
+    let newPostList = postList
+    if (this.state.isOldestFirst){
+      newPostList.sort((a,b)=> a.launch_year < b.launch_year)
+    } else {
+      newPostList.sort((a,b)=> a.launch_year > b.launch_year)
+    }
+    this.setState({
+      isOldestFirst: !this.state.isOldestFirst,
+      postList: newPostList
+    })
+  }
+
+  toggleSortDate (event) {
+    this.sortByDate()
   }
 
   componentDidMount(){
@@ -25,8 +46,7 @@ class App extends Component {
           .then(json => {
               this.setState({
                 isLoaded: true,
-                items: json,
-                
+                items: json, 
               })
           });
   }
@@ -53,15 +73,22 @@ class App extends Component {
           <p>
         See below for a comprehensive record of Space X launches
       </p>
+
       <ul>
-        {this.launch_year.map((launch_year) => {
+        {/* {this.launch_year.map((launch_year) => {
           return <launch year={launch_year}
               key={launch_year.id}/>
-        })}
+        })} */}
       </ul>
+
       <input type="text" 
           value={this.state.search}
           onChange={this.updateSearch.bind(this)}/>
+
+      <input type="Button"
+          value={this.state.sortByDate}
+          onChange={this.sortByDate.bind(this)}>
+      </input>
 
       <ul>
           {items.map(item => (

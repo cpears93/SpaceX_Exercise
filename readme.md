@@ -13,8 +13,8 @@ GitHub - [https://github.com/r-spacex/SpaceX-API](https://github.com/r-spacex/Sp
 
 <!-- - As a user, I want the ability to load the full list of SpaceX launches from the SpaceX API (Completed!!!) -->
 - As a user, I want the ability to reload the data to see any new changes
-- As a user, I want the ability to filter the launch list by year
-- As a user, I want the ability to sort all launches by date (ascending/descending)
+<!-- - As a user, I want the ability to filter the launch list by year (IN PROGRESS) -->
+<!-- - As a user, I want the ability to sort all launches by date (ascending/descending) (IN PROGREESS) -->
 
 ## Considerations we will be looking for in your submission are:
 
