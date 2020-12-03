@@ -11,7 +11,8 @@ class App extends Component {
       this.state = {
         items: [],
         isLoaded: false,
-        search: 'Year',
+        search: 'Search By Year',
+        button: 'Sort by date',
         postList: [],
         isOldestFirst: true
       };
@@ -19,6 +20,20 @@ class App extends Component {
 
   updateSearch(event){
     this.setState({search: event.target.value})
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
+  handleInputChange = (event) => {
+    event.preventDefault()
+    console.log(event)
+    console.log(event.target.value)
+    console.log(event.target.launch_year)
+    this.setState({
+      [event.target.launch_year]: event.target.value
+    })
   }
 
   sortByDate(){
@@ -74,22 +89,11 @@ class App extends Component {
         See below for a comprehensive record of Space X launches
       </p>
 
-      <ul>
-        {/* {this.launch_year.map((launch_year) => {
-          return <launch year={launch_year}
-              key={launch_year.id}/>
-        })} */}
-      </ul>
-
-      <input type="text" 
-          value={this.state.search}
-          onChange={this.updateSearch.bind(this)}/>
-
-      <input type="Button"
-          value={this.state.sortByDate}
-          onChange={this.sortByDate.bind(this)}>
-      </input>
-
+      <form onSubmit={this.handleSubmit}>
+        <p><input type='text' placeholder='Search Year'/></p>
+        <p><button>Sort Ascending/Desending</button></p>
+      </form>
+      
       <ul>
           {items.map(item => (
             <li key={item.id}>
