@@ -24,11 +24,11 @@ return (
           <div className="App-body">
               <img id="spacex_image" src={image001} alt="spacex"></img>
           </div>
-                <div className="App-body-right-pane"></div>
-               <LaunchComponent/>
+              <div className="App-body-right-pane"></div>
+                  <LaunchComponent/>
           </div>
         )  
       }
 
-export default App;      
+      export default App;      
 
