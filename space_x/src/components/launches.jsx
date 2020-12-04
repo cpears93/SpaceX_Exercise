@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Request from '../Helpers/spacexAPIservice';
-import LaunchList from './LaunchList.js';
+import Request from '../helpers/request';
+import LaunchList from './launchList.js';
 
 class LaunchContainer extends Component{
     constructor(props){

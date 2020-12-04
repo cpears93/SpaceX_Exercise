@@ -1,4 +1,4 @@
-import LaunchComponent from './Components/Launches.jsx';
+import LaunchComponent from './components/launches.jsx';
 import logo from './spacex-logo.png';
 import refresh_ico from'./assets/icon/refresh.png';
 import image001 from './assets/img/launch-home.png';
