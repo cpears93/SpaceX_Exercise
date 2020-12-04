@@ -18,6 +18,11 @@ class App extends Component {
       };
   }
 
+  state = {
+    sort: 'asc',
+    postList: []
+  }
+
   updateSearch(event){
     this.setState({search: event.target.value})
   }
@@ -33,20 +38,6 @@ class App extends Component {
     console.log(event.target.launch_year)
     this.setState({
       [event.target.launch_year]: event.target.value
-    })
-  }
-
-  sortByDate(){
-    const {postList} = this.state
-    let newPostList = postList
-    if (this.state.isOldestFirst){
-      newPostList.sort((a,b)=> a.launch_year < b.launch_year)
-    } else {
-      newPostList.sort((a,b)=> a.launch_year > b.launch_year)
-    }
-    this.setState({
-      isOldestFirst: !this.state.isOldestFirst,
-      postList: newPostList
     })
   }
 
@@ -69,6 +60,13 @@ class App extends Component {
 
   render() {
 
+      const {postList, sortType} = this.state;
+
+      const sorted = postList.sort ( (a, b) => {
+        const isReversed = (sortType === 'asc') ? 1 : -1;
+        return isReversed * a.launch_year.localCompare(b.launch_year)
+      });
+  
       var { isLoaded, items } = this.state;
 
       if (!isLoaded) {
@@ -91,9 +89,17 @@ class App extends Component {
 
       <form onSubmit={this.handleSubmit}>
         <p><input type='text' placeholder='Search Year'/></p>
-        <p><button>Sort Ascending/Desending</button></p>
+        <p><button>Sort Ascending</button></p>
+        <p><button>Sort Descending</button></p>
       </form>
-      
+
+      <div className="row">
+        {
+          sorted.map( (mission_name, launch_year, launch_date_local) => {
+                return this.launch_year(mission_name, launch_year, launch_date_local);
+          })
+        }  
+      </div>
       <ul>
           {items.map(item => (
             <li key={item.id}>
