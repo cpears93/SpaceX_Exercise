@@ -3,13 +3,13 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: white;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +18,13 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-body {
+  left: 0;
+  right: 0;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 input {
@@ -29,6 +34,19 @@ input {
   margin: 20px;
   font-size: 18px;
   border-radius: 5px;
+}
+
+.launch-list{
+  border-style: solid;
+  border-color: blue;
+  margin: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px rgb(200, 200, 210);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 button {
