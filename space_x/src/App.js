@@ -1,8 +1,7 @@
 import LaunchComponent from './Components/Launches';
-import logo from './launch-home.png';
+import logo from './assets/spacex-logo.png';
 import refresh_ico from'./assets/icon/refresh.png';
 import image001 from './assets/img/launch-home.png';
-import './spacex-logo.png';
 import './App.css';
 
 function App(){
