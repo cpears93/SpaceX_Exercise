@@ -1,7 +1,10 @@
+const baseUrl = 'https://api.spacexdata.com/v4/launches/'
 class Request {
 
-    get(url) {
-        return fetch(url)
+    get() {
+        console.log("fetching");
+        
+        return fetch(baseUrl)
             .then(res => res.json())
     }
 }
